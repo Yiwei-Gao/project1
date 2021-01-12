@@ -1,0 +1,542 @@
+//variables
+$contactBarBgColor: rgba(0,0,0,0.4); 
+$leftFontColor: rgb(19, 40, 83);
+$downloadButtonColor: rgb(86, 131, 223);
+$iconWidth: 5%;
+$fontType1: 'Bodoni Moda', serif; 
+$hoverBgColor : #503bff;
+$hoverBgColor2: #8293ff;
+$personaBgColor: rgba(227, 227, 240, 0.37);
+$personaBoxShadow: 0px 0px 15px #888888;
+
+@mixin createBox($width, $height, $bRadius, $bgColor, $margin){
+  width: $width;
+  height: $height;
+  border-radius: $bRadius;
+  background-color: $bgColor;
+  margin: $margin;
+  transition: .3s all ease-in-out;
+}
+
+@mixin titleBold() {
+	font-size: 20px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-family: $fontType1;
+}
+
+@mixin greyLine() {
+	border: 1px solid lightgray;
+}
+
+@mixin createCircle() {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: white;
+	border: 1px solid $hoverBgColor;
+	position: absolute;
+	left: -7px;
+}
+@mixin createLine {
+	width: 45px;
+	height: 1px;
+	border: 1px solid $hoverBgColor;	
+}
+
+@mixin createRec {
+    border-left: 4px solid blue;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+.home {
+    &__intro {
+        &__wel {
+            color: red;
+        }
+    }
+}
+.resumePage {
+	&__icon {
+		width: 5%;
+	}
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	&__avaContainer {
+		align-items: center;
+		position: relative;
+	}
+	&__ava {
+		height: 100%;
+		width: 100%;
+	}
+	&__contact__bar {
+		display:flex;
+		justify-content: space-around;
+		align-items: center;
+		position: absolute;
+		height: 20%;
+		width:100%;
+		background-color: $contactBarBgColor;
+		bottom: 0px;
+	}
+	&__contact__icon {
+		width: 10%;
+    	height: 55%;   
+    	transition: 100ms linear;
+    	&:hover {
+    		transform: scale(1.2);
+    	}
+	}
+	&__name {
+		font-weight: bold;
+		font-size: 20px;
+		color: $leftFontColor;
+	}
+	&__download {
+		background-color: $downloadButtonColor;
+		color: white;
+	    border: none;
+	    height: 50px;
+	    margin-top: 18%;
+	}
+	&__list {
+		&__group {
+			li {
+				padding-top: 20px;
+				list-style-type: none;
+			}
+		}
+		&__item {
+			font-size: 15px;
+			font-weight: bold;
+			color: $leftFontColor;
+		}
+		&__icon {
+			height: 100%;
+		    width: 9%;
+		    margin-right: 20px;
+		}
+	}
+}
+
+.right {
+	&__sum {
+		&__title {
+			font-size: 20px;
+	    	font-weight: bold;
+	    	color: $leftFontColor;
+		}
+		&__content {
+			margin-top: 14px;
+			color: $leftFontColor;
+		}
+	}
+}
+
+.project {
+	&__title {
+		font-size: 20px;
+    	font-weight: bold;
+    	color: $leftFontColor;
+	}
+	&__info {
+		display: flex;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid gray;
+        position: relative;
+        margin-top: 55px;
+    }
+    &__card {
+        padding-top: 40px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        @include createRec();
+        transition: .3s all ease-in-out;
+		&:hover {
+			box-shadow: $personaBoxShadow;
+		}
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+    &__container {
+        &--circle {
+            @include createCircle();
+        }
+        &--line {
+            @include createLine();
+        }
+    }
+    &__des {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    &__list__content {
+        display: flex;
+    }
+    &__location {
+        display: flex;
+        &__icon {
+            width: 6%;
+        }
+        &__name {
+            margin-left: 15px;
+            color: gray;
+        }
+    }
+    &__type {
+        display: flex;
+        &__icon {
+            width: 6%;
+        }
+        &__name{
+            margin-left: 15px;
+            color: gray;
+        }
+    }
+    &__period {
+        display: flex;
+        &__icon {
+            width: 6%;
+        }
+        &__date {
+            margin-left: 15px;
+            color: gray;
+        }
+    }
+    
+}
+
+.education {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		border-left: 1px solid gray;
+		margin-top: 55px;
+		.container--circle {
+			@include createCircle();
+			
+		}
+		.container--line {
+			@include createLine();
+		}
+	}
+	&__wrapper {
+		display: flex;
+		align-items: center;
+	}
+	&__title {
+		font-size: 20px;
+    	font-weight: bold;
+		color: $leftFontColor;
+		margin-bottom: 20px;
+	}
+
+	&__uni__list {
+		margin-bottom: 20px;
+	    padding-left: 20px;
+	    @include createRec();
+	}
+	&__card {
+		transition: .3s all ease-in-out;
+		&:hover {
+			box-shadow: $personaBoxShadow;
+		}
+	}
+	&__card--padding {
+		padding-top: 40px;
+		padding-bottom: 30px;
+	}
+	&__major {
+		margin-bottom: 20px;
+	}
+
+	&__list__content {
+		display: flex;
+	    flex-direction: row;
+	    padding-top: 20px;
+	}
+
+	&__uni {
+		display: flex;
+		&__icon{
+			width: $iconWidth
+		}
+		&__name {
+			margin-left: 15px;
+			color: grey;
+		}
+	}
+	&__period {
+		display: flex;
+		color: grey;
+		&__icon {
+			width: $iconWidth;
+		}
+		&__date {
+			color: grey;
+			margin-left: 15px;
+		}
+	}
+}
+
+
+.aboutPage__des__title{
+    // border: 2px solid red;
+}
+
+.aboutPage {
+	&__des {
+		&__title {
+			@include titleBold();
+		}
+		&__content {
+			margin-top: 20px;
+			font-family: $fontType1;
+		}
+    }
+    &__skill {
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+	&__Persona {
+		&__title {
+			@include titleBold();
+		}
+		.persona__wrapper {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		margin-top: 35px;
+		.persona__title {
+    		font-size: 24px;
+    		font-weight: bold;
+    		padding-top: 10px;
+    		font-family: $fontType1;
+		}
+		.persona__content {
+			font-family: $fontType1;
+		}
+		.persona__container {
+			@include createBox(225px, 225px, 5%, $personaBgColor, 28px);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+			
+	    	padding-left: 16px;
+	    	padding-right: 16px;
+	    	box-shadow: $personaBoxShadow;
+
+	    	&:hover {
+	    		background: linear-gradient(130deg, $hoverBgColor 0%, $hoverBgColor2 100%);
+     			box-shadow: none;
+     			.persona__icon,
+     			.persona__title,
+     			.persona__content {
+     				color: white;
+        			transition: .3s all ease-in-out;
+     			}
+	    	}
+	    	.persona__icon__container {
+				display: flex;
+			    justify-content: center;
+			    width: 25%;
+			    .persona__icon {
+		    		max-height: 50px;
+	    			max-width: 50px;
+	    		}
+			}	    	
+		}
+    }
+    &__right {
+        .aboutPage {
+            &__skill {
+                &__title {
+                    @include titleBold();
+                }
+            }
+        }
+        .super__box {
+            // border: 1px solid black;
+            width: 220px;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: $fontType1;
+            margin: 28px;
+            padding-top: 50px;
+            &:hover {
+                .skill__icon__bg {
+                    transform: translateY(-32px) scale(6);
+                }
+                .skill__icon {
+                    transform: translateY(-48px) scale(1.4);
+                }
+                .skill__text {
+                    opacity: 0;
+                    transform: translateY(-4px) scale(.8);
+                }
+                .skill__box::after{
+                    opacity: 1;
+                }
+            }
+            .skill {
+                &__container {
+                    width: 225px;
+                    height: 225px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;  
+                    padding-left: 16px;
+                    padding-right: 16px;                         
+                }
+                &__box {
+                    position: absolute;
+                    width: 220px;
+                    height: 220px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    border-radius: 3px;
+                    overflow: hidden;
+                    transition: box-shadow ease 1s;
+                    &::after {
+                        content: "Discover the attacker's tactics and purposes and find out the identity of the attacker";
+                        position: absolute;
+                        width: 170px;
+                        // top: 111px;
+                        margin-top: 146px;
+                        left: 13%;
+                        bottom: 0px;
+                        opacity: 0;
+                        font-size: 16px;
+                        color:$leftFontColor;
+                        line-height: 20px;
+                        transition: all 0.3s ease;
+                        transition-delay: 0.32s;
+                    }
+                }
+                &__icon__bg {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100%;
+                    border: 1px solid rgba(225, 227, 232, 0.18);
+                    box-shadow: 0 3px 4px 0 rgba(44, 71, 146, 0.25);
+                    background-color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 0.6s ease;
+                    transition-delay: 0.32s;
+                    will-change: transform;
+                }
+                &__icon {
+                    position: relative;
+                    margin-top: 8px;
+                    transition: all 0.6s ease;
+                    transition-delay: 0.32s;
+                    will-change: transform;
+                    img {
+                        width: 59px;
+                        height: 50px;
+                    }
+                }
+                &__text {
+                    position: relative;
+                    top: -12px;
+                    width: 200px;
+                    text-align: center;
+                    transition: all 0.4s ease;
+                    transition-delay: 0.32s;
+                }
+                &__title {
+                    position: relative;
+                    font-family: $fontType1;
+                    font-size: 20px;
+                    padding-top: 55px;
+                }
+            }          
+        }
+    }
+}
+.divider {
+	@include greyLine();
+}
+.home_intro_pos{
+    color: red;
+}
+.download__button {
+	--c: #503bff;
+    color: var(--c);
+    font-size: 16px;
+    border: 2px solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+	margin: 1em;
+	&:hover {
+		text-decoration: none;
+		color: black;
+		span {
+			transform: translateY(0) scale(2);
+			&:nth-child(1) {
+				--n: 1;
+			}
+			&:nth-child(2) {
+				--n: 2;
+			}
+			&:nth-child(3) {
+				--n: 3;
+			}
+			&:nth-child(4) {
+				--n: 4;
+			}
+		}
+	}
+	span {
+		position: absolute;
+		width: 25%;
+		height: 100%;
+		background-color: var(--c);
+		transform: translateY(150%);
+		border-radius: 50%;
+		left: calc((var(--n) - 1) * 25%);
+		transition: 0.5s;
+		transition-delay: calc((var(--n) - 1) * 0.1s);
+		z-index: -1;
+	}
+}
+
+
+
+
+
+
+

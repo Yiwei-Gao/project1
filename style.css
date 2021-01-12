@@ -1,0 +1,474 @@
+.home__intro__wel {
+  color: red;
+}
+
+.resumePage__icon {
+  width: 5%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+.left__avaContainer {
+  align-items: center;
+  position: relative;
+}
+.left__ava {
+  height: 100%;
+  width: 100%;
+}
+.left__contact__bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0px;
+}
+.left__contact__icon {
+  width: 10%;
+  height: 55%;
+  transition: 100ms linear;
+}
+.left__contact__icon:hover {
+  transform: scale(1.2);
+}
+.left__name {
+  font-weight: bold;
+  font-size: 20px;
+  color: #132853;
+}
+.left__download {
+  background-color: #5683df;
+  color: white;
+  border: none;
+  height: 50px;
+  margin-top: 18%;
+}
+.left__list__group li {
+  padding-top: 20px;
+  list-style-type: none;
+}
+.left__list__item {
+  font-size: 15px;
+  font-weight: bold;
+  color: #132853;
+}
+.left__list__icon {
+  height: 100%;
+  width: 9%;
+  margin-right: 20px;
+}
+
+.right__sum__title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #132853;
+}
+.right__sum__content {
+  margin-top: 14px;
+  color: #132853;
+}
+
+.project__title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #132853;
+}
+.project__info {
+  display: flex;
+}
+.project__container {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid gray;
+  position: relative;
+  margin-top: 55px;
+}
+.project__card {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid blue;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+  border-top: 1px solid gray;
+  transition: 0.3s all ease-in-out;
+}
+.project__card:hover {
+  box-shadow: 0px 0px 15px #888888;
+}
+.project__wrapper {
+  display: flex;
+  align-items: center;
+}
+.project__container--circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #503bff;
+  position: absolute;
+  left: -7px;
+}
+.project__container--line {
+  width: 45px;
+  height: 1px;
+  border: 1px solid #503bff;
+}
+.project__des {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.project__list__content {
+  display: flex;
+}
+.project__location {
+  display: flex;
+}
+.project__location__icon {
+  width: 6%;
+}
+.project__location__name {
+  margin-left: 15px;
+  color: gray;
+}
+.project__type {
+  display: flex;
+}
+.project__type__icon {
+  width: 6%;
+}
+.project__type__name {
+  margin-left: 15px;
+  color: gray;
+}
+.project__period {
+  display: flex;
+}
+.project__period__icon {
+  width: 6%;
+}
+.project__period__date {
+  margin-left: 15px;
+  color: gray;
+}
+
+.education__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-left: 1px solid gray;
+  margin-top: 55px;
+}
+.education__container .container--circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #503bff;
+  position: absolute;
+  left: -7px;
+}
+.education__container .container--line {
+  width: 45px;
+  height: 1px;
+  border: 1px solid #503bff;
+}
+.education__wrapper {
+  display: flex;
+  align-items: center;
+}
+.education__title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #132853;
+  margin-bottom: 20px;
+}
+.education__uni__list {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-left: 4px solid blue;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+  border-top: 1px solid gray;
+}
+.education__card {
+  transition: 0.3s all ease-in-out;
+}
+.education__card:hover {
+  box-shadow: 0px 0px 15px #888888;
+}
+.education__card--padding {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+.education__major {
+  margin-bottom: 20px;
+}
+.education__list__content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+.education__uni {
+  display: flex;
+}
+.education__uni__icon {
+  width: 5%;
+}
+.education__uni__name {
+  margin-left: 15px;
+  color: grey;
+}
+.education__period {
+  display: flex;
+  color: grey;
+}
+.education__period__icon {
+  width: 5%;
+}
+.education__period__date {
+  color: grey;
+  margin-left: 15px;
+}
+
+.aboutPage__des__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "Bodoni Moda", serif;
+}
+.aboutPage__des__content {
+  margin-top: 20px;
+  font-family: "Bodoni Moda", serif;
+}
+.aboutPage__skill__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.aboutPage__Persona {
+  margin-top: 35px;
+}
+.aboutPage__Persona__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "Bodoni Moda", serif;
+}
+.aboutPage__Persona .persona__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.aboutPage__Persona .persona__title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 10px;
+  font-family: "Bodoni Moda", serif;
+}
+.aboutPage__Persona .persona__content {
+  font-family: "Bodoni Moda", serif;
+}
+.aboutPage__Persona .persona__container {
+  width: 225px;
+  height: 225px;
+  border-radius: 5%;
+  background-color: rgba(227, 227, 240, 0.37);
+  margin: 28px;
+  transition: 0.3s all ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-shadow: 0px 0px 15px #888888;
+}
+.aboutPage__Persona .persona__container:hover {
+  background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
+  box-shadow: none;
+}
+.aboutPage__Persona .persona__container:hover .persona__icon,
+.aboutPage__Persona .persona__container:hover .persona__title,
+.aboutPage__Persona .persona__container:hover .persona__content {
+  color: white;
+  transition: 0.3s all ease-in-out;
+}
+.aboutPage__Persona .persona__container .persona__icon__container {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}
+.aboutPage__Persona .persona__container .persona__icon__container .persona__icon {
+  max-height: 50px;
+  max-width: 50px;
+}
+.aboutPage__right .aboutPage__skill__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "Bodoni Moda", serif;
+}
+.aboutPage__right .super__box {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Bodoni Moda", serif;
+  margin: 28px;
+  padding-top: 50px;
+}
+.aboutPage__right .super__box:hover .skill__icon__bg {
+  transform: translateY(-32px) scale(6);
+}
+.aboutPage__right .super__box:hover .skill__icon {
+  transform: translateY(-48px) scale(1.4);
+}
+.aboutPage__right .super__box:hover .skill__text {
+  opacity: 0;
+  transform: translateY(-4px) scale(0.8);
+}
+.aboutPage__right .super__box:hover .skill__box::after {
+  opacity: 1;
+}
+.aboutPage__right .super__box .skill__container {
+  width: 225px;
+  height: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.aboutPage__right .super__box .skill__box {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: box-shadow ease 1s;
+}
+.aboutPage__right .super__box .skill__box::after {
+  content: "Discover the attacker's tactics and purposes and find out the identity of the attacker";
+  position: absolute;
+  width: 170px;
+  margin-top: 146px;
+  left: 13%;
+  bottom: 0px;
+  opacity: 0;
+  font-size: 16px;
+  color: #132853;
+  line-height: 20px;
+  transition: all 0.3s ease;
+  transition-delay: 0.32s;
+}
+.aboutPage__right .super__box .skill__icon__bg {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 1px solid rgba(225, 227, 232, 0.18);
+  box-shadow: 0 3px 4px 0 rgba(44, 71, 146, 0.25);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease;
+  transition-delay: 0.32s;
+  will-change: transform;
+}
+.aboutPage__right .super__box .skill__icon {
+  position: relative;
+  margin-top: 8px;
+  transition: all 0.6s ease;
+  transition-delay: 0.32s;
+  will-change: transform;
+}
+.aboutPage__right .super__box .skill__icon img {
+  width: 59px;
+  height: 50px;
+}
+.aboutPage__right .super__box .skill__text {
+  position: relative;
+  top: -12px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.4s ease;
+  transition-delay: 0.32s;
+}
+.aboutPage__right .super__box .skill__title {
+  position: relative;
+  font-family: "Bodoni Moda", serif;
+  font-size: 20px;
+  padding-top: 55px;
+}
+
+.divider {
+  border: 1px solid lightgray;
+}
+
+.home_intro_pos {
+  color: red;
+}
+
+.download__button {
+  --c: #503bff;
+  color: var(--c);
+  font-size: 16px;
+  border: 2px solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+.download__button:hover {
+  text-decoration: none;
+  color: black;
+}
+.download__button:hover span {
+  transform: translateY(0) scale(2);
+}
+.download__button:hover span:nth-child(1) {
+  --n: 1;
+}
+.download__button:hover span:nth-child(2) {
+  --n: 2;
+}
+.download__button:hover span:nth-child(3) {
+  --n: 3;
+}
+.download__button:hover span:nth-child(4) {
+  --n: 4;
+}
+.download__button span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+/*# sourceMappingURL=style.css.map */
