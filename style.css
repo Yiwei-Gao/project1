@@ -1,11 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+body {
+  background: #f7f4f4;
+  background: linear-gradient(90deg, #f7f4f4 0%, #d6e6ed 96%);
+}
+
+.navbar {
+  opacity: 0.5;
+}
+
+.nav__bar__container ul li a {
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+}
+.nav__bar__container ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #aaa;
+  height: 5px;
+  transition: all 0.5s;
+}
+.nav__bar__container ul li a:before {
+  transition: all 0.5s;
+}
+.nav__bar__container ul li a:hover {
+  cursor: pointer;
+}
+.nav__bar__container ul li a:hover:after {
+  width: 100%;
+}
+
+.navbar {
+  margin-bottom: 0px !important;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+.navbar-brand-name {
+  color: #4f8dc0;
+}
+
+.home__con {
+  background-color: black;
+}
+.home__intro {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/pexels-scott-webb-1029618.jpg");
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+}
+.home__intro__info {
+  position: absolute;
+  left: 140px;
+  top: 300px;
+  font-family: "Bebas Neue", cursive;
+}
+.home__intro__card {
+  margin-left: 175px;
+}
+.home__intro__portrait {
+  border-radius: 5%;
+  margin-top: 60px;
+  margin-left: 555px;
+  width: 310x;
+  height: 770px;
+}
 .home__intro__wel {
-  color: red;
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  font-size: 23px;
+  padding-bottom: 10px;
+}
+.home__intro__firName {
+  font-family: "Bebas Neue", cursive;
+  font-size: 60px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: white;
+}
+.home__intro__lastName {
+  color: white;
+}
+.home__intro__des {
+  color: white;
+  font-family: "Bodoni Moda", serif;
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+.home__intro__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
 }
 
 .resumePage__icon {
   width: 5%;
 }
-
 .left {
   display: flex;
   flex-direction: column;
@@ -48,6 +150,9 @@
   height: 50px;
   margin-top: 18%;
 }
+.left__list__group {
+  margin-bottom: 61px;
+}
 .left__list__group li {
   padding-top: 20px;
   list-style-type: none;
@@ -67,10 +172,13 @@
   font-size: 20px;
   font-weight: bold;
   color: #132853;
+  margin-top: 20px;
 }
 .right__sum__content {
   margin-top: 14px;
   color: #132853;
+  font-size: 15px;
+  font-family: "Bodoni Moda", serif;
 }
 
 .project__title {
@@ -111,14 +219,14 @@
   height: 15px;
   border-radius: 50%;
   background-color: white;
-  border: 1px solid #503bff;
+  border: 1px solid #8478ec;
   position: absolute;
   left: -7px;
 }
 .project__container--line {
   width: 45px;
   height: 1px;
-  border: 1px solid #503bff;
+  border: 1px solid #8478ec;
 }
 .project__des {
   padding-top: 15px;
@@ -133,6 +241,18 @@
 .project__location__icon {
   width: 6%;
 }
+@media only screen and (min-width: 18.75em) {
+  .project__location__icon {
+    width: 22%;
+    height: 46%;
+  }
+}
+@media only screen and (min-width: 63em) {
+  .project__location__icon {
+    width: 9%;
+    height: 100%;
+  }
+}
 .project__location__name {
   margin-left: 15px;
   color: gray;
@@ -143,6 +263,18 @@
 .project__type__icon {
   width: 6%;
 }
+@media only screen and (min-width: 18.75em) {
+  .project__type__icon {
+    width: 22%;
+    height: 46%;
+  }
+}
+@media only screen and (min-width: 63em) {
+  .project__type__icon {
+    width: 9%;
+    height: 100%;
+  }
+}
 .project__type__name {
   margin-left: 15px;
   color: gray;
@@ -152,6 +284,18 @@
 }
 .project__period__icon {
   width: 6%;
+}
+@media only screen and (min-width: 18.75em) {
+  .project__period__icon {
+    width: 22%;
+    height: 46%;
+  }
+}
+@media only screen and (min-width: 63em) {
+  .project__period__icon {
+    width: 9%;
+    height: 100%;
+  }
 }
 .project__period__date {
   margin-left: 15px;
@@ -170,14 +314,14 @@
   height: 15px;
   border-radius: 50%;
   background-color: white;
-  border: 1px solid #503bff;
+  border: 1px solid #8478ec;
   position: absolute;
   left: -7px;
 }
 .education__container .container--line {
   width: 45px;
   height: 1px;
-  border: 1px solid #503bff;
+  border: 1px solid #8478ec;
 }
 .education__wrapper {
   display: flex;
@@ -218,8 +362,17 @@
 .education__uni {
   display: flex;
 }
-.education__uni__icon {
-  width: 5%;
+@media only screen and (min-width: 18.75em) {
+  .education__uni__icon {
+    width: 13%;
+    height: 55%;
+  }
+}
+@media only screen and (min-width: 63em) {
+  .education__uni__icon {
+    width: 5%;
+    height: 100%;
+  }
 }
 .education__uni__name {
   margin-left: 15px;
@@ -229,8 +382,17 @@
   display: flex;
   color: grey;
 }
-.education__period__icon {
-  width: 5%;
+@media only screen and (min-width: 18.75em) {
+  .education__period__icon {
+    width: 13%;
+    height: 55%;
+  }
+}
+@media only screen and (min-width: 63em) {
+  .education__period__icon {
+    width: 5%;
+    height: 100%;
+  }
 }
 .education__period__date {
   color: grey;
@@ -250,6 +412,7 @@
 .aboutPage__skill__wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 25px;
 }
 .aboutPage__Persona {
   margin-top: 35px;
@@ -274,8 +437,8 @@
   font-family: "Bodoni Moda", serif;
 }
 .aboutPage__Persona .persona__container {
-  width: 225px;
-  height: 225px;
+  width: 194px;
+  height: 220px;
   border-radius: 5%;
   background-color: rgba(227, 227, 240, 0.37);
   margin: 28px;
@@ -289,7 +452,7 @@
   box-shadow: 0px 0px 15px #888888;
 }
 .aboutPage__Persona .persona__container:hover {
-  background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
+  background: linear-gradient(130deg, #8478ec 0%, #8293ff 100%);
   box-shadow: none;
 }
 .aboutPage__Persona .persona__container:hover .persona__icon,
@@ -306,6 +469,7 @@
 .aboutPage__Persona .persona__container .persona__icon__container .persona__icon {
   max-height: 50px;
   max-width: 50px;
+  margin-top: 9px;
 }
 .aboutPage__right .aboutPage__skill__title {
   font-size: 20px;
@@ -314,8 +478,8 @@
   font-family: "Bodoni Moda", serif;
 }
 .aboutPage__right .super__box {
-  width: 220px;
-  height: 220px;
+  width: 190px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -338,8 +502,8 @@
   opacity: 1;
 }
 .aboutPage__right .super__box .skill__container {
-  width: 225px;
-  height: 225px;
+  width: 190px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -361,8 +525,9 @@
 .aboutPage__right .super__box .skill__box::after {
   content: "Discover the attacker's tactics and purposes and find out the identity of the attacker";
   position: absolute;
-  width: 170px;
+  width: 190px;
   margin-top: 146px;
+  padding-bottom: 20px;
   left: 13%;
   bottom: 0px;
   opacity: 0;
@@ -412,19 +577,42 @@
   padding-top: 55px;
 }
 
+.contactPage__map {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.contactPage__right .message__form {
+  height: 60px;
+}
+.contactPage__right .form {
+  margin-top: 25px;
+}
+
+.submit__btn {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 55px;
+  font-size: 18px;
+  transition: 0.3s;
+  color: #1e7dd6;
+  font-family: "Lato", sans-serif;
+  border: 1px solid #1e7dd6;
+}
+.submit__btn:hover {
+  background-color: #1e7dd6;
+  opacity: 1;
+  color: white;
+}
+
 .divider {
   border: 1px solid lightgray;
 }
 
-.home_intro_pos {
-  color: red;
-}
-
 .download__button {
-  --c: #503bff;
+  --c: #4f8dc0;
   color: var(--c);
   font-size: 16px;
-  border: 2px solid var(--c);
+  border: 3px solid var(--c);
   border-radius: 0.5em;
   width: 12em;
   height: 3em;
@@ -441,7 +629,7 @@
 }
 .download__button:hover {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .download__button:hover span {
   transform: translateY(0) scale(2);
@@ -469,6 +657,81 @@
   transition: 0.5s;
   transition-delay: calc((var(--n) - 1) * 0.1s);
   z-index: -1;
+}
+
+.left__button {
+  font-size: 16px;
+  border: 2px solid #5683df;
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
+  text-align: center;
+  line-height: 3em;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  background-color: #8293ff;
+  transition: 0.3s all ease-in-out;
+  color: black;
+  margin-left: 41px;
+  margin-top: 20px;
+}
+.left__button:hover {
+  background-color: #8478ec;
+  color: white;
+}
+
+.btn__container {
+  width: auto;
+  height: auto;
+  font-family: "Lato", sans-serif;
+  color: #333333;
+}
+.btn__container a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 200;
+}
+
+.btn__download {
+  position: relative;
+  letter-spacing: 0.25em;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: #333333;
+}
+.btn__download::after, .btn__download::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  transform: skewX(30deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+}
+.btn__download::before {
+  background-color: #6eafbb;
+  top: -1rem;
+  left: 0rem;
+}
+.btn__download::after {
+  background-color: #9a7cd1;
+  top: 1rem;
+  left: 8rem;
+}
+.btn__download:hover::before, .btn__download:hover::after {
+  top: 0;
+  transform: skewx(0deg);
+}
+.btn__download:hover::after {
+  left: 0rem;
+}
+.btn__download:hover::before {
+  left: 8.75rem;
 }
 
 /*# sourceMappingURL=style.css.map */

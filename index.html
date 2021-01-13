@@ -14,10 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">    
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-default">
-        <div class="container">
+        <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -30,38 +32,51 @@
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    
+          <div class="collapse navbar-collapse nav__bar__container" id="bs-example-navbar-collapse-1">    
             <ul class="nav navbar-nav navbar-right">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-                    <li role="presentation"><a href="#resume" aria-controls="resume" role="tab" data-toggle="tab">Resume</a></li>
-                    <li role="presentation"><a href="#about" aria-controls="about" role="tab" data-toggle="tab">About</a></li>
-                    <li role="presentation"><a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact Us</a></li>
-                  </ul>
+                  <li role="presentation"><a class="tablink" onclick="openPage('home', this)">Home</a></li>
+                  <li role="presentation"><a class="tablink" id="defaultOpen" onclick="openPage('resume', this)">Resume</a></li>
+                  <li role="presentation"><a class="tablink" onclick="openPage('about', this)">About</a></li>
+                  <li role="presentation"><a class="tablink" onclick="openPage('contact',this)">Contact Us</a></li>  
             </ul>
           </div>
         </div>
       </nav>
 
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
+    <div class="tab-content page">
+        <div role="tabpanel" class="tab-pane active tabcontent" id="home">
             <div class="home__intro">
-                <img class="home__intro__portrait" src="img/avatar.png" alt="portrait">
-                <div class="home_intro_info">
-                    <div class="home__intro__wel">Welcome</div>
-                    <div class="home_intro_name">
-                        I am Yiwei Gao
+                <!-- <div class="home__portrait__container"></div> -->
+                <!-- <div class="home__intro__flex">
+
+                </div> -->
+                <!-- <img class="home__intro__portrait" src="img/boy.png" alt="portrait">  -->
+                <div class="home__intro__info">
+                    <div class="home__intro__card">
+                        <div class="home__intro__wel">Hi, there I am</div>
+                        <div class="home__intro__firName">
+                            Yiwei Gao
+                        </div>
+                        <div class="home__intro__des">
+                            Lorem ipsum dolor sit amet, <br>
+                            consectetur adipiscing elit.Fusce aliquet tincidunt magna, <br>
+                            in imperdiet tellus volutpat gravida. Maecenas nec porta massa. 
+                        </div>
                     </div>
-                    <div class="home_intro_pos">
-                        Full Stack Developer
+                    
+                    <div class="home__intro__button">
+                        <a class="intro__link download__button" href="">View
+                            <span></span><span></span><span></span><span></span>
+                        </a>                       
                     </div>
-                    <a href="">View</a>
                 </div>
+                <img class="home__intro__portrait" src="img/boy.png" alt="portrait"> 
+
             </div>
         </div>
 
         <!--Resume Page-->
-        <div role="tabpanel" class="tab-pane resumePage" id="resume">
+        <div role="tabpanel" class="tab-pane resumePage tabcontent" id="resume">
             <div class="container">
                 <div class="row resumePage__container">
                     <div class="col-md-3 left">
@@ -102,18 +117,22 @@
                                 </li>                              
                               </ul>
                         </div> 
-                        <a href="#" class="download__button">
+                        <!-- <a href="#" class="download__button">
                             Download Resume
                             <span></span><span></span><span></span><span></span>
-                        </a>                         
+                        </a>                          -->
+                        <div class="btn__container">
+                            <a class="btn__download" href="">DownLoad Resume</a>
+                        </div>
                     </div>
-
+                    <div class="col-md-1"></div>
                     <!--right-->
-                    <div class="col-md-9 resumePage__right">
+                    <div class="col-md-8 resumePage__right">
                         <div class="right__sum">
-                            <span class="right__sum__title">
+                            <p class="right__sum__title">
                                 Professional Summary
-                            </span>
+                            </p>
+                            <div class="divider"></div>
                             <p class="right__sum__content">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
@@ -140,7 +159,7 @@
                                                     </div>
                                                     <div class="education__period">
                                                         <img class="education__period__icon" src="img/tick-mark.png" alt="">
-                                                        <p class="list-group-item-text education__period__date">Jan 12.2014 - Dec 122014-2016</p>
+                                                        <p class="list-group-item-text education__period__date">Jan 12.2018 - Dec 122014-2020</p>
                                                     </div>                                       
                                                 </div>
                                             </div>
@@ -155,15 +174,15 @@
                                     <div class="list-group education__card">
                                         <div class="education__uni__list">
                                             <div class="education__card--padding">
-                                                <h4 class="list-group-item-heading education__major">Master of Information Technology</h4>
+                                                <h4 class="list-group-item-heading education__major">Bachelor of Accounting</h4>
                                                 <div class="education__list__content">
                                                     <div class="education__uni">
                                                         <img class="education__uni__icon" src="img/graduation-cap.png" alt="">
-                                                        <p class="list-group-item-text education__uni__name">The University of Queesland</p>
+                                                        <p class="list-group-item-text education__uni__name">North China Institute of Science and Technology</p>
                                                     </div>
                                                     <div class="education__period">
                                                         <img class="education__period__icon" src="img/tick-mark.png" alt="">
-                                                        <p class="list-group-item-text education__period__date">Jan 12.2014 - Dec 122014-2016</p>
+                                                        <p class="list-group-item-text education__period__date">Jan 12.2014 - Dec 122014-2018</p>
                                                     </div>                                       
                                                 </div>
                                             </div>
@@ -241,7 +260,7 @@
                                 <div class="project__container--line"></div>
                                 <div class="list-group project__card">
                                     <h4 class="list-group-item-heading project__name">
-                                        Eco Rewards
+                                        Lorem ipsum
                                     </h4>
                                     <p class="project__des">
                                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration 
@@ -273,7 +292,7 @@
         </div>
 
  <!--  About Page -->
-        <div role="tabpanel" class="tab-pane aboutPage" id="about">
+        <div role="tabpanel" class="tab-pane aboutPage tabcontent" id="about">
             <div class="container">
                 <!-- aboutPage left -->
                 <div class="row resumePage__container">
@@ -315,12 +334,17 @@
                                 </li>                              
                               </ul>
                         </div> 
-                        <a href="#" class="left__download">
+                        <!-- <a href="#" class="download__button">
                             Download Resume
-                        </a>                      
+                            <span></span><span></span><span></span><span></span>
+                        </a>                  -->
+                        <div class="btn__container">
+                            <a class="btn__download" href="">DownLoad Resume</a>
+                        </div>
                     </div>
+                    <div class="col-md-1"></div>
                     <!-- about page right -->
-                    <div class="col-md-9 aboutPage__right">
+                    <div class="col-md-8 aboutPage__right">
                         <div class="aboutPage__des">
                             <div class="aboutPage__des__title">
                                 Description
@@ -350,43 +374,43 @@
                                 </div>
                                 <div class="persona__container">
                                     <div class="persona__icon__container">
-                                        <img class="persona__icon" src="img/idea.png" alt="">
+                                        <img class="persona__icon" src="img/005-diagram.png" alt="">
                                     </div>
-                                    <p class="persona__title">Consistent</p>
+                                    <p class="persona__title">Lorem</p>
                                     <p class="persona__content">
                                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
                                     </p>
                                 </div>
                                 <div class="persona__container">
                                     <div class="persona__icon__container">
-                                        <img class="persona__icon" src="img/idea.png" alt="">
+                                        <img class="persona__icon" src="img/032-wait.png" alt="">
                                     </div>
-                                    <p class="persona__title">Consistent</p>
+                                    <p class="persona__title">Be Curious</p>
                                     <p class="persona__content">
                                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
                                     </p>
                                 </div>
                                 <div class="persona__container">
                                     <div class="persona__icon__container">
-                                        <img class="persona__icon" src="img/idea.png" alt="">
+                                        <img class="persona__icon" src="img/004-graph.png" alt="">
                                     </div>
-                                    <p class="persona__title">Consistent</p>
+                                    <p class="persona__title">Think Big</p>
                                     <p class="persona__content">
                                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
                                     </p>
                                 </div>
                                 <div class="persona__container">
                                     <div class="persona__icon__container">
-                                        <img class="persona__icon" src="img/idea.png" alt="">
+                                        <img class="persona__icon" src="img/008-hierarchy.png" alt="">
                                     </div>
-                                    <p class="persona__title">Consistent</p>
+                                    <p class="persona__title">Deliver Result</p>
                                     <p class="persona__content">
                                         There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
                                     </p>
                                 </div>
                                 <div class="persona__container">
                                     <div class="persona__icon__container">
-                                        <img class="persona__icon" src="img/idea.png" alt="">
+                                        <img class="persona__icon" src="img/031-infographic.png" alt="">
                                     </div>
                                     <p class="persona__title">Consistent</p>
                                     <p class="persona__content">
@@ -488,7 +512,7 @@
             </div>
         </div>
         <!-- contact Page -->
-        <div role="tabpanel" class="tab-pane" id="contact">
+        <div role="tabpanel" class="tab-pane tabcontent" id="contact">
             <div class="container">
                 <div class="row resumePage__container">
                     <!-- contact page left -->
@@ -530,16 +554,25 @@
                                 </li>                              
                               </ul>
                         </div> 
-                        <a href="#" class="left__download">
+                        <!-- <a href="#" class="download__button">
                             Download Resume
-                        </a>
+                            <span></span><span></span><span></span><span></span>
+                        </a>  -->
+                        <div class="btn__container">
+                            <a class="btn__download" href="">DownLoad Resume</a>
+                        </div>
                     </div>
-                    <div class="col-md-9 contactPage__right">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-8 contactPage__right">
+                        <div class="contactPage__map">
+                            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                            <div class="elfsight-app-bd521914-5e28-49df-82cf-4355f7220a1d"></div>
+                        </div> 
                         <form>
                             <div class="form-group">
                                 <label for="InputName1">Name</label>
                                 <input type="name" class="form-control" placeholder="Name">
-                              </div>
+                            </div>
                             <div class="form-group">
                               <label for="InputEmail1">Email address</label>
                               <input type="email" class="form-control" placeholder="Email">
@@ -550,15 +583,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="InputMessage>">Message</label>
-                                <input class="form-control" placeholder="message">
-                              </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                          </form> 
-                          <div class="contactPage__map">
-                            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                            <div class="elfsight-app-bd521914-5e28-49df-82cf-4355f7220a1d"></div>
-                          </div>  
-                        </div>
+                                <input class="form-control message__form" >
+                            </div>
+                            <button type="submit" class="btn btn-default submit__btn">Submit</button>
+                        </form> 
+                         
+                      </div>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 //variables
 $contactBarBgColor: rgba(0,0,0,0.4); 
 $leftFontColor: rgb(19, 40, 83);
 $downloadButtonColor: rgb(86, 131, 223);
 $iconWidth: 5%;
 $fontType1: 'Bodoni Moda', serif; 
-$hoverBgColor : #503bff;
+$hoverBgColor : #8478ec;
 $hoverBgColor2: #8293ff;
 $personaBgColor: rgba(227, 227, 240, 0.37);
 $personaBoxShadow: 0px 0px 15px #888888;
+$white: #ececec;
+$black: #333333;
+$yellow: #6eafbb;
+$purple: #9a7cd1;
+$colorPrimary: $yellow;
+$colorSecondary: $purple;
+
+$XS: 12.5em; // 200px
+$S: 18.75em; //300px
+$M: 47.5em; 
+$L: 63em;
+$XL: 83em; 
+
+//media queries
+// 根据最小屏幕宽度和最大屏幕宽度的范围来控制responsive website
+@mixin MQ($canvas) {
+	@if $canvas == XS {
+		@media only screen and (min-width: $XS) { // - 1em
+			@content;  
+		}
+	}
+	@else if $canvas == S {
+		@media only screen and (min-width: $S) {
+			@content; //被替换成调用他的selector的属性值 
+			//加only指的是只有screen的时候才加上这个样式 对现在浏览器加不加only 区别没有很大
+		}
+	}  
+	@else if $canvas == M {
+		@media only screen and (min-width: $M) {
+			@content;  
+		}
+	}
+	@else if $canvas ==  L { 
+		@media only screen and (min-width: $L) {
+			@content;  
+		} // screen 还可以是print属性，即用户打印时的界面样式
+	}
+} 
+
+@mixin btn__split($colorLeft, $colorRight, $textColor) {
+	.btn__download {
+		position: relative;
+		letter-spacing: 0.25em;
+		margin: 0 auto;
+		padding: 1rem 2.5rem;
+		background: transparent;
+		outline: none;
+		font-size: 15px;
+		color: $textColor;
+
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 70%;
+			transform: skewX(30deg);
+			transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+			z-index: -2;
+		}
+		&::before {
+			background-color: $colorLeft;
+			top: -1rem;
+			left: 0rem;
+		}
+		&::after {
+			background-color: $colorRight;
+			top: 1rem;
+			left: 8rem;
+		}
+		&:hover {
+			&::before,
+			&::after {
+				top: 0;
+				transform: skewx(0deg);
+			}
+			&::after {
+				left: 0rem;
+			}
+			&::before {
+				left: 8.75rem;
+			}
+		}
+	}
+}
 
 @mixin createBox($width, $height, $bRadius, $bgColor, $margin){
   width: $width;
@@ -16,6 +102,57 @@ $personaBoxShadow: 0px 0px 15px #888888;
   background-color: $bgColor;
   margin: $margin;
   transition: .3s all ease-in-out;
+}
+
+@mixin button {
+    --c: #503bff;
+    color: var(--c);
+    font-size: 16px;
+    border: 2px solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+	margin: 1em;
+	&:hover {
+		text-decoration: none;
+		color: black;
+		span {
+			transform: translateY(0) scale(2);
+			&:nth-child(1) {
+				--n: 1;
+			}
+			&:nth-child(2) {
+				--n: 2;
+			}
+			&:nth-child(3) {
+				--n: 3;
+			}
+			&:nth-child(4) {
+				--n: 4;
+			}
+		}
+	}
+	span {
+		position: absolute;
+		width: 25%;
+		height: 100%;
+		background-color: var(--c);
+		transform: translateY(150%);
+		border-radius: 50%;
+		left: calc((var(--n) - 1) * 25%);
+		transition: 0.5s;
+		transition-delay: calc((var(--n) - 1) * 0.1s);
+		z-index: -1;
+	}
 }
 
 @mixin titleBold() {
@@ -51,20 +188,172 @@ $personaBoxShadow: 0px 0px 15px #888888;
     border-top: 1px solid gray;
 }
 
+body {
+    // background-image: url('img/cool-background.png');
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // background-color: black;
+    background: rgb(247,244,244);
+    background: linear-gradient(90deg, rgba(247,244,244,1) 0%, rgba(214,230,237,1) 96%);
+}
+// .home__intro{
+//     background-image: url('img/joshua-ness--r_UgyF_yb0-unsplash.jpg');
+// }
+
+.navbar {
+    opacity: 0.5;
+}
+.nav__bar__container {
+    ul {
+        li {
+            a {
+                text-decoration: none;
+                color: #aaa;
+                font-weight: 800;
+                text-transform: uppercase;
+                transition: all .5s;
+                position: relative;
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    // margin: auto;
+                    width: 0%;
+                    content: '.';
+                    color: transparent;
+                    background: #aaa;
+                    height: 5px;
+                    transition: all .5s;
+                }
+                &:before{
+                    transition: all .5s;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                
+                &:hover {
+                    // color: #555;
+                    // position: absolute;
+                    // bottom: 0;
+                    // left: 0;
+                    // right: 0;
+                    // margin: auto;
+                    // width: 0%;
+                    // content: '.';
+                    // color: transparent;
+                    // background: #aaa;
+                    // height: 1px; 
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+.navbar {
+    margin-bottom: 0px !important;
+    &-brand {
+        font-weight: bold;
+        &-name {
+            color: #4f8dc0;
+        }
+    }
+
+}
 .home {
+    &__portrait {
+       
+    }
+    &__con {
+        background-color: black;
+    }
+    
     &__intro {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/pexels-scott-webb-1029618.jpg');
+        background-attachment: fixed;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        position: relative;
+        display: flex;
+  
+
+        &__info {
+            position: absolute;
+            left: 140px;
+            top: 300px;
+            font-family: 'Bebas Neue', cursive;
+            
+        }
+        // position: relative;
+        &__card {
+            margin-left: 175px;
+        }
+        &__portrait {
+            border-radius: 5%;
+            margin-top: 60px;
+            margin-left: 555px;
+            // position: absolute;
+            width: 310x;
+            height: 770px;
+            // right: 227px;
+        }
         &__wel {
-            color: red;
+            color: white;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 23px;
+            padding-bottom: 10px;
+        }
+        &__firName {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 60px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            color: white;
+        }
+        &__lastName {
+            color: white;
+        }
+        &__des {
+            color: white;
+            font-family: $fontType1;
+            padding-bottom: 20px;
+            font-size: 15px;
+        }
+        &__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // position: absolute;
+            left: 0px;       
+            // height: 40px;
+            // width: 87px;
+            // border-radius: 5%;
+            // background-color: $hoverBgColor2;
+           
         }
     }
 }
 .resumePage {
 	&__icon {
 		width: 5%;
-	}
+    }
+    &__right {
+        // background-color: white;
+    }
+    // &__right {
+    //     padding-top: 40px;
+    //     padding-bottom: 20pxs;
+    // }
+    
 }
 
 .left {
+    // background-color: white;
 	display: flex;
 	flex-direction: column;
 	&__avaContainer {
@@ -107,6 +396,7 @@ $personaBoxShadow: 0px 0px 15px #888888;
 	}
 	&__list {
 		&__group {
+            margin-bottom: 61px;
 			li {
 				padding-top: 20px;
 				list-style-type: none;
@@ -130,13 +420,16 @@ $personaBoxShadow: 0px 0px 15px #888888;
 		&__title {
 			font-size: 20px;
 	    	font-weight: bold;
-	    	color: $leftFontColor;
+            color: $leftFontColor;
+            margin-top: 20px;
 		}
 		&__content {
 			margin-top: 14px;
-			color: $leftFontColor;
+            color: $leftFontColor;
+            font-size: 15px;
+            font-family: $fontType1;
 		}
-	}
+    }
 }
 
 .project {
@@ -189,6 +482,14 @@ $personaBoxShadow: 0px 0px 15px #888888;
         display: flex;
         &__icon {
             width: 6%;
+            @include MQ(S) {
+                width: 22%;
+                height: 46%;
+            }
+            @include MQ(L) {
+                width: 9%;
+                height: 100%;
+            }
         }
         &__name {
             margin-left: 15px;
@@ -199,6 +500,14 @@ $personaBoxShadow: 0px 0px 15px #888888;
         display: flex;
         &__icon {
             width: 6%;
+            @include MQ(S) {
+                width: 22%;
+                height: 46%;
+            }
+            @include MQ(L) {
+                width: 9%;
+                height: 100%;
+            }
         }
         &__name{
             margin-left: 15px;
@@ -209,6 +518,14 @@ $personaBoxShadow: 0px 0px 15px #888888;
         display: flex;
         &__icon {
             width: 6%;
+            @include MQ(S) {
+                width: 22%;
+                height: 46%;
+            }
+            @include MQ(L) {
+                width: 9%;
+                height: 100%;
+            }
         }
         &__date {
             margin-left: 15px;
@@ -250,6 +567,7 @@ $personaBoxShadow: 0px 0px 15px #888888;
 	    @include createRec();
 	}
 	&__card {
+        // background-color: white;
 		transition: .3s all ease-in-out;
 		&:hover {
 			box-shadow: $personaBoxShadow;
@@ -272,7 +590,16 @@ $personaBoxShadow: 0px 0px 15px #888888;
 	&__uni {
 		display: flex;
 		&__icon{
-			width: $iconWidth
+            
+            @include MQ(S) {
+                width: 13%;
+                height: 55%;
+            }
+            @include MQ(L) {
+                width: 5%;
+                height: 100%;
+            }
+            
 		}
 		&__name {
 			margin-left: 15px;
@@ -283,7 +610,15 @@ $personaBoxShadow: 0px 0px 15px #888888;
 		display: flex;
 		color: grey;
 		&__icon {
-			width: $iconWidth;
+            // width: $iconWidth;
+            @include MQ(S) {
+                width: 13%;
+                height: 55%;
+            }
+            @include MQ(L) {
+                width: 5%;
+                height: 100%;
+            }
 		}
 		&__date {
 			color: grey;
@@ -293,9 +628,6 @@ $personaBoxShadow: 0px 0px 15px #888888;
 }
 
 
-.aboutPage__des__title{
-    // border: 2px solid red;
-}
 
 .aboutPage {
 	&__des {
@@ -311,6 +643,7 @@ $personaBoxShadow: 0px 0px 15px #888888;
         &__wrapper {
             display: flex;
             flex-wrap: wrap;
+            margin-top: 25px;
         }
     }
 	&__Persona {
@@ -332,7 +665,7 @@ $personaBoxShadow: 0px 0px 15px #888888;
 			font-family: $fontType1;
 		}
 		.persona__container {
-			@include createBox(225px, 225px, 5%, $personaBgColor, 28px);
+			@include createBox(194px, 220px, 5%, $personaBgColor, 28px);
 			display: flex;
 			flex-direction: column;
 			justify-content: space-evenly;
@@ -358,7 +691,8 @@ $personaBoxShadow: 0px 0px 15px #888888;
 			    width: 25%;
 			    .persona__icon {
 		    		max-height: 50px;
-	    			max-width: 50px;
+                    max-width: 50px;
+                    margin-top: 9px;
 	    		}
 			}	    	
 		}
@@ -373,8 +707,8 @@ $personaBoxShadow: 0px 0px 15px #888888;
         }
         .super__box {
             // border: 1px solid black;
-            width: 220px;
-            height: 220px;
+            width: 190px; //220
+            height: 190px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -399,8 +733,8 @@ $personaBoxShadow: 0px 0px 15px #888888;
             }
             .skill {
                 &__container {
-                    width: 225px;
-                    height: 225px;
+                    width: 190px; //225
+                    height: 190px;
                     display: flex;
                     justify-content: center;
                     align-items: center;  
@@ -409,7 +743,7 @@ $personaBoxShadow: 0px 0px 15px #888888;
                 }
                 &__box {
                     position: absolute;
-                    width: 220px;
+                    width: 220px; //220
                     height: 220px;
                     display: flex;
                     justify-content: center;
@@ -421,9 +755,10 @@ $personaBoxShadow: 0px 0px 15px #888888;
                     &::after {
                         content: "Discover the attacker's tactics and purposes and find out the identity of the attacker";
                         position: absolute;
-                        width: 170px;
+                        width: 190px;
                         // top: 111px;
                         margin-top: 146px;
+                        padding-bottom: 20px;
                         left: 13%;
                         bottom: 0px;
                         opacity: 0;
@@ -477,17 +812,48 @@ $personaBoxShadow: 0px 0px 15px #888888;
         }
     }
 }
+
+.contactPage {
+    &__map {
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+    &__right {
+       .message__form {
+           height: 60px;
+       }
+       .form {
+           margin-top: 25px;
+       }
+    }
+}
+
+.submit__btn {
+    width: 100%;
+    // background-color: rgb(30, 125, 214,0.5);
+    // opacity: 0.5;
+    margin-top: 20px;
+    margin-bottom: 55px;
+    font-size: 18px;
+    transition: 0.3s;
+    color:  rgb(30, 125, 214);
+    font-family: "Lato", sans-serif;
+    border: 1px solid rgb(30, 125, 214);
+    &:hover {
+        background-color: rgb(30, 125, 214);
+        opacity: 1;
+        color: white;
+    }
+}
 .divider {
 	@include greyLine();
 }
-.home_intro_pos{
-    color: red;
-}
+
 .download__button {
-	--c: #503bff;
+	--c: #4f8dc0;
     color: var(--c);
     font-size: 16px;
-    border: 2px solid var(--c);
+    border: 3px solid var(--c);
     border-radius: 0.5em;
     width: 12em;
     height: 3em;
@@ -503,7 +869,7 @@ $personaBoxShadow: 0px 0px 15px #888888;
 	margin: 1em;
 	&:hover {
 		text-decoration: none;
-		color: black;
+		color: white;
 		span {
 			transform: translateY(0) scale(2);
 			&:nth-child(1) {
@@ -533,6 +899,45 @@ $personaBoxShadow: 0px 0px 15px #888888;
 		z-index: -1;
 	}
 }
+
+.left__button {
+    font-size: 16px;
+    border: 2px solid $downloadButtonColor;
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-align: center;
+    line-height: 3em;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    background-color: $hoverBgColor2;
+    transition: .3s all ease-in-out;
+    color: black;
+    margin-left: 41px;
+    margin-top: 20px;
+    &:hover {
+        background-color: $hoverBgColor;
+        color: white;
+    }
+}
+
+.btn{
+    &__container {
+        width: auto;
+        height: auto;
+        font-family: "Lato", sans-serif;
+        color: $black;
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 200;
+        }
+    }
+}
+
+@include btn__split($colorPrimary, $colorSecondary, $black);
 
 
 
